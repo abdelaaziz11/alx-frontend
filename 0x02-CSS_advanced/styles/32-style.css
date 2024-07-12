@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-logo {
     position: var(--header-logo-position);
 }
-.header-logo link {
+.header-logo a {
     display: var(--header-logo-link-display);
     position: var(--header-logo-link-position);
     top: var(--header-logo-link-top);
@@ -181,13 +181,13 @@ a:active {
 .navbar-menu {
     float: right;
 }
-nav {
+.nav {
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
 }
-nav .nav-item {
+.nav .nav-item {
     font-family: var(--nav-item-font-family);
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
@@ -195,23 +195,25 @@ nav .nav-item {
     display: var(--nav-item-display);
     margin: var(--nav-item-margin);
 }
-nav .nav-link{
+.nav .nav-link{
     display: block;
     padding: 0.5rem 1rem;
 }
-nav .nav-link:hover {
+.nav .nav-link:hover {
     color: var(--nav-item-link-hover);
 }
-nav .nav-link::before {
+.nav .nav-link::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     background-color: var(--color-white);
     width: 0;
-    height: 20%;
+    height: 0.2rem;
+    transition: var(–transition-duration) var(transition-cubic-bezier);
+
 }
-nav .nav-item:hover .nav-link::before {
+.nav .nav-item:hover .nav-link::before {
     background-color: var(--color-primary);
     width: 100%;
 }
@@ -305,7 +307,9 @@ ul.row {
     left: -0.1rem;
     right: -0.1rem;
     z-index: 1;
+    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
+
 .card-work:hover .card-inner {
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -354,15 +358,7 @@ ul.row {
     transform: scale(0.95);
 }
 
-.nav .nav-link::before {
-    transition: var(–transition-duration) var(transition-cubic-bezier);
-}
-
 .button:hover {
     transition-duration: var(--transition-duration);
     transition-property: color, background-color;
-}
-
-.card-work .card-inner {
-    transition: var(–transition-duration) var(transition-cubic-bezier);
 }
